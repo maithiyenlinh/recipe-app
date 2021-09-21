@@ -1,0 +1,251 @@
+@font-face {
+    font-family: 'Peterbuilt Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Peterbuilt Medium'), url('/recipe-app/Peterbuilt.woff') format('woff');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #333;
+}
+
+body {
+    background-color: #FBF3FA;
+    display: flex;
+    min-height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.mobile-container {
+    background-color: #fff;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 0 0 10px 2px #BCBCC6;
+    margin: auto;
+}
+
+.app-heading {
+    display: flex;
+    justify-content: space-between;
+    height: 46px;
+}
+
+.app-name {
+    cursor: pointer;
+}
+
+.btn {
+    border: none;
+    background-color: #fff;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.btn input {
+    border: none;
+    border-bottom: 1px solid #333;
+    border-radius: 3px;
+    width: 150px;
+    padding: 0.5rem;
+    color: #333;
+    font-size: 1rem;
+}
+.btn-search {
+    padding: 0;
+}
+
+.icon-search {
+    padding: 15px;
+}
+
+.app-name {
+    line-height: 46px;
+    font-family: 'Peterbuilt Medium';
+    font-size: 2.5rem;
+    color: #C9974E;
+}
+
+.fav-container {
+    position: relative;
+    padding: 10px 5px 0;
+    background-color: #FBF3FA;
+    overflow-x: auto;
+    box-shadow: inset 0 3px 2px rgba(0,0,0,0.5),
+                inset 0 -3px 2px rgba(0,0,0,0.5);
+}
+
+.fav-container::-webkit-scrollbar {
+    width: 0;
+}
+
+.fav-recipes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fav-item {
+    padding: 10px 10px 0;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fade linear 1s;
+}
+
+.fav-item img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.meal-container {
+    padding-bottom: 10px;
+}
+
+.meal {
+    margin: 20px 20px 10px;
+    box-shadow: 0 0 10px 2px #BCBCC6;
+    border-radius: 10px;
+    position: relative;
+    animation: growth linear 1s, fade linear 1s;
+}
+
+.random::before {
+    content: "Recipe of the Day";
+    background-color: #ddd;
+    color: #536472;
+    position: absolute;
+    padding: 0.5rem;
+    border-radius: 5px;
+    top: 10px;
+    left: 2px;
+}
+
+.meal-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+
+.meal-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.meal-name {
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-fav {
+    font-size: 1.5rem;
+}
+
+.fa.icon {
+    color: red;
+}
+
+.meal-info-container{
+    overflow: auto;
+    padding: 15px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+}
+
+.meal-info-container.hidden {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+}
+
+.meal-info {
+    margin: auto;
+    padding: 15px;
+    width: 600px;
+    max-width: 100%;
+    background-color: #fff;
+    text-align: center;
+    line-height: 1.5rem;
+    position: relative;
+}
+
+.icon-close {
+    font-size:1.5rem;
+    position: absolute;
+    padding: 15px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.meal-info__heading h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.meal-info__body {
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td {
+    text-align: left;
+}
+
+.icon-info{
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 15px;
+    font-size: 1.5rem;
+    box-shadow: 0 0 10px 2px #BCBCC6;
+    cursor: pointer;
+    float: right;
+}
+.meal-info__footer {
+    margin-top: 15px;
+}
+.meal-info__footer p {
+    text-align: justify;
+}
+@keyframes fade {
+    from { 
+        opacity: 0;
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+@keyframes growth{
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
